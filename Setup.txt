@@ -1,0 +1,6 @@
+npx creat-react-app appname
+npm start
+
+npm i react-router-dom
+
+npm i ethers
