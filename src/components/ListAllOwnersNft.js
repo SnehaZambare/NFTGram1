@@ -11,75 +11,8 @@ import {
 import Loader from './Loader';
 import OurService from './OurService';
 
-const NFTContractAddress="0x241c42d4D9c0A55e9CB57d2E1Ce55FCE0bB6D981";
+const NFTContractAddress="0xAF5d37444Ece38a7C3eBE66254395Fb695C178Ec";
 const abiNFTContract=[
-	{
-		"inputs": [],
-		"name": "NFTId",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "NFTs",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "imageUrl",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "price",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "bool",
-				"name": "forSale",
-				"type": "bool"
-			},
-			{
-				"internalType": "bool",
-				"name": "forbid",
-				"type": "bool"
-			},
-			{
-				"internalType": "uint256",
-				"name": "highestBid",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "highestBidder",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
 	{
 		"inputs": [
 			{
@@ -140,11 +73,55 @@ const abiNFTContract=[
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_NFTId",
+				"type": "uint256"
+			}
+		],
+		"name": "placeForBid",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_NFTId",
+				"type": "uint256"
+			}
+		],
+		"name": "placeForSale",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_NFTId",
+				"type": "uint256"
+			}
+		],
+		"name": "sellToHighestBidder",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "listNFTs",
 		"outputs": [
 			{
 				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
 					{
 						"internalType": "string",
 						"name": "imageUrl",
@@ -207,6 +184,11 @@ const abiNFTContract=[
 			{
 				"components": [
 					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
 						"internalType": "string",
 						"name": "imageUrl",
 						"type": "string"
@@ -256,42 +238,75 @@ const abiNFTContract=[
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"inputs": [],
+		"name": "NFTId",
+		"outputs": [
 			{
 				"internalType": "uint256",
-				"name": "_NFTId",
+				"name": "",
 				"type": "uint256"
 			}
 		],
-		"name": "placeForBid",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_NFTId",
+				"name": "",
 				"type": "uint256"
 			}
 		],
-		"name": "placeForSale",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
+		"name": "NFTs",
+		"outputs": [
 			{
 				"internalType": "uint256",
-				"name": "_NFTId",
+				"name": "id",
 				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "imageUrl",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "forSale",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "forbid",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "highestBid",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "highestBidder",
+				"type": "address"
 			}
 		],
-		"name": "sellToHighestBidder",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	}
 ];
@@ -317,7 +332,58 @@ function ListOwnedNft(props) {
 				whole[i]=arraylist[i];
 			}
 			setw1(whole);
-			console.log(whole)
+			//console.log(whole)
+		  }
+		} catch (error) {
+		  console.error(error);
+		}
+	  }
+
+	  async function startsell(id) {
+		try {
+		  const { ethereum } = window;
+		  if (ethereum) {
+            const provider = new ethers.providers.Web3Provider(ethereum);
+			const signer = provider.getSigner();
+
+			const NFTContract = new ethers.Contract(NFTContractAddress,abiNFTContract,signer);
+			let txn = await NFTContract.placeForSale(id);
+			//console.log(txn)
+
+		  }
+		} catch (error) {
+		  console.error(error);
+		}
+	  }
+
+	  async function startbid(id) {
+		try {
+		  const { ethereum } = window;
+		  if (ethereum) {
+            const provider = new ethers.providers.Web3Provider(ethereum);
+			const signer = provider.getSigner();
+
+			const NFTContract = new ethers.Contract(NFTContractAddress,abiNFTContract,signer);
+			let txn = await NFTContract.placeForBid(id);
+			//console.log(txn)
+
+		  }
+		} catch (error) {
+		  console.error(error);
+		}
+	  }
+
+	  async function selltohighestbidder(id) {
+		try {
+		  const { ethereum } = window;
+		  if (ethereum) {
+            const provider = new ethers.providers.Web3Provider(ethereum);
+			const signer = provider.getSigner();
+
+			const NFTContract = new ethers.Contract(NFTContractAddress,abiNFTContract,signer);
+			let txn = await NFTContract.sellToHighestBidder(id);
+			//console.log(txn)
+
 		  }
 		} catch (error) {
 		  console.error(error);
@@ -335,8 +401,8 @@ function ListOwnedNft(props) {
     <div className="d-flex flex-wrap justify-content-center">
       {whole.map((nft) => (
         <div class="card m-3 form-bg form-container">
-       
-            <span class="badge badge-success p-2" >{nft.name}</span>
+		
+            <span class="badge badge-success p-2" >{nft.NFTId}{nft.name}</span>
            
     
           <img
@@ -349,16 +415,16 @@ function ListOwnedNft(props) {
 			<span class="badge badge-danger p-2 m-2" >{" "}
 				{nft.forSale ? `Price: ${nft.price} ETH` : "Not for sale"}</span>
 
-			<span class="badge badge-danger p-2 m-2" >{nft.forbid ? `Price: ${nft.price} ETH` : "Not for Bid"}</span>
+			<span class="badge badge-danger p-2 m-2" >{nft.forbid ? `Bid Current Price: ${nft.highestBid} ETH` : "Not for Bid"}</span>
 			<div class="d-flex justify-content-around">
           <h5 class="card-title text-center">
             {nft.forSale || (
-              <button className="btn btn-success">Start Bidding</button>
+              <button className="btn btn-success" onClick={() => startsell(nft.id)}>List Sell</button>
             )}
           </h5>
 		  <h5 class="card-title text-center">
             {nft.forbid || (
-              <button className="btn btn-success">Bid Your NFT</button>
+              <button className="btn btn-success" onClick={() => startbid(nft.id)}>Bid Your NFT</button>
             )}
           </h5>
 		  </div>
@@ -367,7 +433,7 @@ function ListOwnedNft(props) {
         
 		  <h5 class="card-title text-center">
             {nft.forbid && (
-              <button className="btn btn-success">Sell to Highest BidderT</button>
+              <button className="btn btn-success" onClick={()=>selltohighestbidder(nft.id)}>Sell to Highest Bidder</button>
             )}
           </h5>
 		  </div>
