@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 contract NFT {
     
     struct NFTInfo {
+        uint id;
         string imageUrl;
         uint256 price;
         address owner;
@@ -20,6 +21,7 @@ contract NFT {
     function addNFT(string memory _imageUrl, uint256 _price, string memory _name) public {
     NFTId++;
     NFTs[NFTId] = NFTInfo({
+        id:NFTId,
         imageUrl: _imageUrl,
         price: _price,
         owner: msg.sender,
