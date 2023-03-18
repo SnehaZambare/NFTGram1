@@ -406,14 +406,15 @@ function ListAllNft(props) {
 		
           <h5 class="card-title text-center">
 		  
-            {nft.owner==props.currentAccount && nft.forSale &&  (
+            { nft.forSale &&  (
               <button className="btn btn-success" onClick={()=>buynft(nft.id,nft.price)}>Buy Now</button>
             )}
 		
           </h5>
 		
+		
 		  <h5 class="card-title text-center">
-            {nft.owner==props.currentAccount && nft.forbid && (
+            { nft.forbid && (
               <button className="btn btn-success" onClick={()=>bidnft(nft.id,nft.price)}>Bid Now</button>
             )}
           </h5>
