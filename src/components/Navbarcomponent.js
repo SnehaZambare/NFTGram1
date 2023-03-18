@@ -9,6 +9,8 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+
+
 const NFTContractAddress="0xAF5d37444Ece38a7C3eBE66254395Fb695C178Ec";
 const abiNFTContract=[
 	{
