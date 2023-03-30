@@ -335,7 +335,7 @@ function ListOwnedNft(props) {
 			//console.log(whole)
 		  }
 		} catch (error) {
-		  console.error(error);
+		  alert(error);
 		}
 	  }
 
@@ -352,7 +352,7 @@ function ListOwnedNft(props) {
 
 		  }
 		} catch (error) {
-		  console.error(error);
+		  alert(error);
 		}
 	  }
 
@@ -369,7 +369,7 @@ function ListOwnedNft(props) {
 
 		  }
 		} catch (error) {
-		  console.error(error);
+		  alert(error);
 		}
 	  }
 
@@ -386,7 +386,7 @@ function ListOwnedNft(props) {
 
 		  }
 		} catch (error) {
-		  console.error(error);
+		  alert(error);
 		}
 	  }
 
