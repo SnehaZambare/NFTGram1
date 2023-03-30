@@ -1,5 +1,5 @@
-# Getting Started with NFT Marketplace React App
+# React App For NFT marketplace.
 
-Runs the app \
-Open [[https://nft-marketplace-cbsb.netlify.app]]((https://nft-marketplace-cbsb.netlify.app/)) to view it in your browser.
+Runs the app in 
+Open [https://nft-marketplace-cbsb.netlify.app](https://nft-marketplace-cbsb.netlify.app) to view it in your browser.
 
