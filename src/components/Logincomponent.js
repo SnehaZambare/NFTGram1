@@ -40,7 +40,7 @@ function Logincomponent(props) {
       props.setCurrentBalanace("");
       <Loader></Loader>
 		  } catch (err) {
-			console.log(err);
+			alert(err);
 		  }
 	  }
 
@@ -48,7 +48,7 @@ function Logincomponent(props) {
         const { ethereum } = window;
     
         if (!ethereum) {
-          console.log("Make sure you have Metamask installed!");
+          alert("Make sure you have Metamask installed!");
           return;
         } else {
           //console.log("Wallet exists! We're ready to go!")
@@ -70,7 +70,7 @@ function Logincomponent(props) {
           props.setCurrentAccount(account);
          // console.log("logout IN");
         } else {
-          console.log("No authorized account found");
+          alert("No authorized account found");
         }
       }
 
@@ -98,7 +98,7 @@ function Logincomponent(props) {
           
           
         } catch (err) {
-          console.log(err)
+          alert(err)
         }
       }
 
