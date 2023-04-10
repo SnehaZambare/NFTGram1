@@ -310,10 +310,10 @@ function AdminPanel() {
 				whole[i]=arraylist[i];
 			}
 			setw1(whole);
-			console.log(whole)
+			//console.log(whole)
 		  }
 		} catch (error) {
-		  console.error(error);
+		  alert(error);
 		}
 	  }
 
