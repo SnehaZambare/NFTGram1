@@ -6,7 +6,7 @@ function FooterComponent() {
 <>
 	<div className="copyright  text-center ">
 		<div className="container-fluid ">
-					<p className=''>Copyrights &copy; 2023 - <a href="#">Jarvis Systems</a>,  All Rights Reserved.<br></br>
+					<p className=''>Copyrights &copy; 2023 - <a href="#">NFTGram</a>,  All Rights Reserved.<br></br>
 					</p>
 
 		</div>

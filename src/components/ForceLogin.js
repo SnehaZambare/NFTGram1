@@ -5,16 +5,16 @@ import '../Typewriter.css';
 function ForceLogin() {
 
   const [text, setText] = useState("");
-  const messages = ["NFT Marketplace","Create , Buy , sell , Bid","Your NFTs"];
+  // const messages = ["NFT Marketplace","Create , Buy , sell , Bid","Your NFTs"];
 
-  useEffect(() => {
-    let i = 0;
-    let timer = setInterval(() => {
-      setText(messages[i]);
-      i = (i + 1) % messages.length;
-    }, 2000);
-    return () => clearInterval(timer);
-  }, []);
+  // useEffect(() => {
+  //   let i = 0;
+  //   let timer = setInterval(() => {
+  //     setText(messages[i]);
+  //     i = (i + 1) % messages.length;
+  //   }, 2000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
 
   return (
@@ -23,11 +23,11 @@ function ForceLogin() {
     <div className="home-page">
       <img 
       className='bg-img'
-      src={process.env.PUBLIC_URL + "/bg.jpg"} 
+      src={process.env.PUBLIC_URL + "/bg2.png"} 
       alt="Background" 
       style={{ 
           width: '100%', 
-          //height: '500px', 
+          //height: '75rem', 
           objectFit: 'cover' 
         }} 
       />

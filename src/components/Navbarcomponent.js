@@ -365,8 +365,15 @@ function Navbarcomponent(props) {
       
         <div className="logo-holder logo-3 mr-3">
           <a>
-            <h3>CBSB</h3>
-            <p>NFT Marketplace</p>
+			<img src={process.env.PUBLIC_URL + "/nftGram LOGO MAIN.png"}
+			alt="Background"
+			style={{
+				width: '4rem',
+				height: '4rem', 
+				objectFit: 'cover'
+			}}>
+			</img>
+            <h3>NFTGRAM</h3>
           </a>
         </div>
 

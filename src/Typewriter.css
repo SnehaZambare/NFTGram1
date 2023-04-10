@@ -1,6 +1,6 @@
 .home-page {
     position: relative;
-   
+   height: auto;
   }
   
   .background-image {
@@ -19,11 +19,11 @@
     transform: translate(-50%, -50%);
     font-size: 36px;
     font-weight: bold;
-    color: #fff;
+    /* color: #fff;
     white-space: nowrap;
     overflow: hidden;
     border-right: .15em solid #fff;
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; */
   }
   
   @keyframes typing {
@@ -64,6 +64,6 @@
 /* CSS styles for my-div on laptop */
 @media only screen and (min-width: 768px) {
   .bg-img{
-    height: 500px;
+    height: 41rem;
   }
 }
